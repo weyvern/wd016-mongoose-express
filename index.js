@@ -1,9 +1,8 @@
-if (process.env.NODE_ENV !== 'production') {
-  await import('dotenv/config.js');
-}
+import 'dotenv/config.js';
 import express from 'express';
 import postsRouter from './routes/postsRouter.js';
 import errorHandler from './middlewares/errorHandler.js';
+import './db/mongooseClient.js';
 
 const app = express();
 const port = process.env.PORT || 5000;
